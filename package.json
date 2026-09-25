@@ -1,4 +1,5 @@
 {
+<<<<<<< HEAD
   "name": "dukan",
   "version": "1.0.0",
   "description": "AI-Driven Market Linkage and Smart Cataloging Platform for Marginalized Artisans",
@@ -9,4 +10,23 @@
   },
   "dependencies": {},
   "devDependencies": {}
+=======
+  "name": "dukaan-informationweb",
+  "version": "1.0.0",
+  "description": "Dukaan - AI-Driven Market Linkage and Smart Cataloging for Marginalized Artisans",
+  "main": "serve.js",
+  "scripts": {
+    "start": "node serve.js",
+    "dev": "node serve.js",
+    "serve": "node serve.js"
+  },
+  "keywords": [
+    "dukaan",
+    "sih2026",
+    "artisan",
+    "offline-first"
+  ],
+  "author": "Team Melody's",
+  "license": "ISC"
+>>>>>>> 9795935ad54905879cf92d98fd1d8667583a8de7
 }

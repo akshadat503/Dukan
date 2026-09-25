@@ -8,6 +8,10 @@
   <meta name="description"
     content="AI-driven mobile application helping marginalized rural artisans digitize crafts, generate structured catalogs with Google Gemini AI, and connect with markets offline-first.">
 
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="alternate icon" href="favicon.ico">
+
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -585,8 +589,7 @@
       <div class="problem-solution-grid">
 
         <!-- Left: The Rural Challenge -->
-        <div
-          style="background: white; border-radius: var(--radius-xl); padding: 36px 30px; border: 1px solid #F0D5CA; box-shadow: var(--shadow-sm);">
+        <div class="problem-card" style="border: 1px solid #F0D5CA; box-shadow: var(--shadow-sm);">
           <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 24px;">
             <span
               style="width: 32px; height: 32px; border-radius: 50%; background: #FDE8E8; display: flex; align-items: center; justify-content: center; color: #E02424; font-weight: 800;">✕</span>
@@ -638,8 +641,7 @@
         </div>
 
         <!-- Right: The Dukaan AI Solution -->
-        <div
-          style="background: white; border-radius: var(--radius-xl); padding: 36px 30px; border: 1.5px solid var(--terracotta-400); box-shadow: var(--shadow-md); position: relative;">
+        <div class="solution-card" style="border: 1.5px solid var(--terracotta-400); box-shadow: var(--shadow-md); position: relative;">
           <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 24px;">
             <span
               style="width: 32px; height: 32px; border-radius: 50%; background: #DEF7EC; display: flex; align-items: center; justify-content: center; color: #0E9F6E; font-weight: 800;">✓</span>
@@ -778,8 +780,7 @@
       </div>
 
       <!-- Interactive Focus Panel -->
-      <div
-        style="margin-top: 24px; background: white; border-radius: var(--radius-lg); padding: 24px 30px; border: 1px solid var(--border-warm); box-shadow: var(--shadow-sm); display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 20px;">
+      <div class="workflow-focus-panel">
         <div>
           <span id="workflow-focus-tag"
             style="font-size: 0.74rem; font-weight: 800; color: var(--terracotta-600); text-transform: uppercase; letter-spacing: 0.08em;">
@@ -823,7 +824,7 @@
         </div>
 
         <!-- Craft Sample Selector Tabs -->
-        <div class="ai-craft-tabs" style="justify-content: center; margin-top: 28px;">
+        <div class="ai-craft-tabs" style="margin-top: 28px;">
           <button class="craft-tab-btn active" data-craft="textile">Sample 1: Handwoven Textile (Ikat Silk)</button>
           <button class="craft-tab-btn" data-craft="pottery">Sample 2: Terracotta Pottery (Earthen Urn)</button>
           <button class="craft-tab-btn" data-craft="brass">Sample 3: Dhokra Lost-Wax (Bell Metal)</button>
@@ -1228,8 +1229,7 @@
         </div>
 
         <!-- Description Card -->
-        <div
-          style="background: white; border-radius: var(--radius-xl); padding: 36px 30px; border: 1px solid var(--border-subtle); box-shadow: var(--shadow-md);">
+        <div class="app-showcase-desc-card">
           <span class="badge badge-sih" style="margin-bottom: 12px;">Interactive Screen Feature</span>
           <h3 id="phone-screen-title"
             style="font-size: 1.6rem; font-weight: 800; color: var(--brown-900); margin-bottom: 14px;">

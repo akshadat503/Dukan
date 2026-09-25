@@ -103,6 +103,8 @@ section[id] {
   position: absolute;
   width: 440px;
   height: 440px;
+  max-width: 90vw;
+  max-height: 90vw;
   border-radius: 50%;
   background: radial-gradient(circle, rgba(200, 90, 50, 0.15) 0%, rgba(229, 169, 60, 0.05) 70%, transparent 100%);
   z-index: 0;
@@ -354,7 +356,7 @@ section[id] {
    -------------------------------------------------------------------------- */
 .impact-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr));
   gap: 24px;
   margin-top: 48px;
 }
@@ -612,11 +614,18 @@ section[id] {
 /* --------------------------------------------------------------------------
    RESPONSIVE QUERIES & BREAKPOINTS
    -------------------------------------------------------------------------- */
+
+/* TABLETS LANDSCAPE & LAPTOPS (<= 1024px) */
 @media (max-width: 1024px) {
   .hero-grid {
     grid-template-columns: 1fr;
     gap: 40px;
     text-align: center;
+  }
+
+  .hero-visual {
+    flex-direction: column;
+    width: 100%;
   }
 
   .hero-content {
@@ -654,13 +663,19 @@ section[id] {
     gap: 20px;
   }
 
+  .team-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+
   .footer-top {
     grid-template-columns: 1fr 1fr;
     gap: 30px;
   }
 }
 
-@media (max-width: 768px) {
+/* TABLETS PORTRAIT & COMPACT LAPTOPS (<= 860px) */
+@media (max-width: 860px) {
   .page-section {
     padding-top: 48px !important;
     padding-bottom: 48px !important;
@@ -671,11 +686,7 @@ section[id] {
     padding-bottom: 40px !important;
   }
 
-  .nav-actions .btn {
-    display: none;
-  }
-
-  .sim-body {
+  .problem-solution-grid {
     grid-template-columns: 1fr;
     gap: 24px;
   }
@@ -685,8 +696,25 @@ section[id] {
     gap: 24px;
   }
 
-  .workflow-stepper {
+  .sim-body {
     grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .app-showcase-layout {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+}
+
+/* PHABLETS & LARGE PHONES (<= 768px) */
+@media (max-width: 768px) {
+  .nav-actions .btn {
+    display: none;
+  }
+
+  .workflow-stepper {
+    grid-template-columns: repeat(2, 1fr);
     gap: 14px;
   }
 
@@ -695,18 +723,8 @@ section[id] {
     gap: 32px;
   }
 
-  .table-comparison {
-    display: block;
-    overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
-  }
-
   .offline-sim-wrapper {
-    padding: 24px 18px;
-  }
-
-  .arch-diagram-wrapper {
-    padding: 24px 18px;
+    padding: clamp(20px, 4vw, 28px) clamp(16px, 4vw, 22px);
   }
 
   .problem-quote-banner {
@@ -729,6 +747,7 @@ section[id] {
   }
 }
 
+/* MEDIUM PHONES (<= 576px) */
 @media (max-width: 576px) {
   .hero-badges-row {
     display: flex;
@@ -756,7 +775,8 @@ section[id] {
     gap: 10px;
     margin-top: 16px;
     padding-top: 16px;
-    max-width: 320px;
+    max-width: min(100%, 320px);
+    width: 100%;
     margin-left: auto;
     margin-right: auto;
   }
@@ -765,51 +785,118 @@ section[id] {
     font-size: 0.84rem;
   }
 
+  .workflow-stepper {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
   .home-feature-cards {
     grid-template-columns: 1fr;
     gap: 14px;
   }
 
+  .tech-stack-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .team-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
   .cta-buttons-row {
     flex-direction: column;
     width: 100%;
+    gap: 10px;
   }
 
   .cta-buttons-row .btn {
     width: 100%;
   }
 
-  .ecosystem-flow-container {
-    padding: 24px 16px;
-  }
-
   .tech-card,
   .problem-card,
+  .solution-card,
   .team-card,
-  .impact-card,
   .timeline-phase-card {
-    padding: 24px 18px;
+    padding: 22px 18px;
+  }
+
+  .workflow-focus-panel {
+    padding: 18px 16px;
+  }
+
+  .workflow-focus-panel > span:last-child {
+    width: 100%;
+    text-align: center;
   }
 
   .ai-catalog-result {
     padding: 20px 16px;
   }
+
+  .sim-toggle-btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    text-align: center;
+    gap: 8px;
+  }
 }
 
+/* SMALL / EXTRA-SMALL PHONES (<= 380px) */
 @media (max-width: 380px) {
   .phone-chassis {
     width: 100%;
-    min-height: 460px;
-    padding: 8px;
-    border-radius: 36px;
+    max-width: 290px;
+    min-height: 440px;
+    padding: 6px;
+    border-radius: 34px;
   }
 
   .phone-screen {
-    border-radius: 28px;
+    border-radius: 26px;
   }
 
   .craft-tab-btn {
-    padding: 8px 14px;
-    font-size: 0.8rem;
+    padding: 7px 12px;
+    font-size: 0.78rem;
+  }
+
+  .heading-hero {
+    font-size: 1.7rem;
+  }
+
+  .heading-section {
+    font-size: 1.35rem;
+  }
+
+  .btn {
+    padding: 11px 18px;
+    font-size: 0.88rem;
+  }
+
+  .badge {
+    font-size: 0.68rem;
+    padding: 3px 8px;
+  }
+
+  .team-avatar {
+    width: 64px;
+    height: 64px;
+    font-size: 1.25rem;
+    margin-bottom: 12px;
+  }
+
+  .team-card {
+    padding: 18px 14px;
+  }
+
+  .team-name {
+    font-size: 1.12rem;
   }
 }

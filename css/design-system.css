@@ -116,6 +116,9 @@ html {
   font-size: 16px;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
 }
 
 body {
@@ -123,6 +126,8 @@ body {
   background-color: var(--bg-cream-primary);
   color: var(--text-primary);
   line-height: 1.6;
+  width: 100%;
+  max-width: 100%;
   overflow-x: hidden;
   position: relative;
 }
@@ -138,9 +143,10 @@ body::before {
   z-index: 0;
 }
 
-img, svg, video {
+img, svg, video, canvas, iframe {
   display: block;
   max-width: 100%;
+  height: auto;
 }
 
 a {
