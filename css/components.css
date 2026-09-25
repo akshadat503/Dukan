@@ -297,7 +297,23 @@
     background: linear-gradient(135deg, rgba(200, 90, 50, 0.15) 0%, rgba(229, 169, 60, 0.15) 100%);
     color: var(--terracotta-600);
     border-left: 4px solid var(--terracotta-500);
-    padding-left: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .brand-tagline {
+    display: none;
+  }
+  .brand-name {
+    font-size: 1.15rem;
+  }
+  .brand-emblem {
+    width: 36px;
+    height: 36px;
+  }
+  .nav-menu {
+    width: min(290px, 88vw);
+    padding: 20px 16px;
   }
 }
 
@@ -405,7 +421,8 @@
   border-radius: var(--radius-pill);
   font-size: 0.78rem;
   font-weight: 700;
-  line-height: 1;
+  line-height: 1.35;
+  max-width: 100%;
   letter-spacing: 0.02em;
 }
 
@@ -463,9 +480,10 @@
 .phone-chassis {
   width: min(100%, 320px);
   max-width: 320px;
-  height: 640px;
-  max-height: calc(100vh - 160px);
-  min-height: 500px;
+  height: auto;
+  min-height: 480px;
+  max-height: 85vh;
+  aspect-ratio: 9 / 18.5;
   background: #11100F;
   border-radius: 44px;
   padding: 10px;
@@ -476,6 +494,19 @@
   margin: 0 auto;
   user-select: none;
   transition: transform var(--transition-normal);
+}
+
+@media (max-width: 480px) {
+  .phone-chassis {
+    width: min(100%, 295px);
+    max-width: 295px;
+    min-height: 440px;
+    padding: 8px;
+    border-radius: 36px;
+  }
+  .phone-screen {
+    border-radius: 28px;
+  }
 }
 
 .phone-screen {
@@ -698,21 +729,14 @@
 
 /* Tablet & Mobile adaptation for floating badges */
 @media (max-width: 1024px) {
-  .badge-pos-1 { top: 8%; left: -10px; }
-  .badge-pos-2 { top: 34%; right: -10px; }
-  .badge-pos-3 { bottom: 22%; left: -10px; }
-  .badge-pos-4 { bottom: 6%; right: -10px; }
-}
-
-@media (max-width: 768px) {
   .hero-floating-badges-wrap {
     position: static;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 10px;
+    gap: 12px;
     width: 100%;
-    max-width: 360px;
-    margin: 20px auto 0;
+    max-width: 420px;
+    margin: 24px auto 0;
     pointer-events: auto;
   }
 
@@ -721,8 +745,8 @@
     animation: none !important;
     transform: none !important;
     width: 100%;
-    padding: 10px 12px;
-    font-size: 0.8rem;
+    padding: 10px 14px;
+    font-size: 0.82rem;
     box-shadow: var(--shadow-sm);
     justify-content: flex-start;
   }
@@ -732,6 +756,7 @@
   .hero-floating-badges-wrap {
     grid-template-columns: 1fr;
     max-width: 300px;
+    gap: 8px;
   }
 }
 
@@ -745,10 +770,11 @@
   margin-top: 48px;
 }
 
-.problem-card {
+.problem-card,
+.solution-card {
   background: white;
-  border-radius: var(--radius-lg);
-  padding: 32px 26px;
+  border-radius: var(--radius-xl);
+  padding: clamp(22px, 4vw, 36px) clamp(16px, 4vw, 30px);
   border: 1px solid var(--border-subtle);
   box-shadow: var(--shadow-sm);
   transition: all var(--transition-normal);
@@ -756,6 +782,37 @@
   overflow: hidden;
   display: flex;
   flex-direction: column;
+}
+
+.problem-card {
+  border-color: #F0D5CA;
+}
+
+.solution-card {
+  border: 1.5px solid var(--terracotta-400);
+  box-shadow: var(--shadow-md);
+}
+
+.workflow-focus-panel {
+  margin-top: 24px;
+  background: white;
+  border-radius: var(--radius-lg);
+  padding: clamp(18px, 3.5vw, 24px) clamp(16px, 3.5vw, 30px);
+  border: 1px solid var(--border-warm);
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.app-showcase-desc-card {
+  background: white;
+  border-radius: var(--radius-xl);
+  padding: clamp(22px, 4vw, 36px) clamp(16px, 4vw, 30px);
+  border: 1px solid var(--border-subtle);
+  box-shadow: var(--shadow-md);
 }
 
 .problem-card::before {
@@ -1104,6 +1161,8 @@
   color: #A3E635;
   height: 220px;
   overflow-y: auto;
+  overflow-x: hidden;
+  word-break: break-word;
   border: 1px solid rgba(255, 255, 255, 0.06);
   display: flex;
   flex-direction: column;
@@ -1135,23 +1194,39 @@
    -------------------------------------------------------------------------- */
 .ai-craft-tabs {
   display: flex;
-  gap: 12px;
+  gap: 10px;
   margin-bottom: 28px;
   overflow-x: auto;
-  padding-bottom: 4px;
+  padding: 4px 4px 12px;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  justify-content: center;
+}
+
+.ai-craft-tabs::-webkit-scrollbar {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .ai-craft-tabs {
+    justify-content: flex-start !important;
+    scroll-snap-type: x mandatory;
+  }
 }
 
 .craft-tab-btn {
-  padding: 10px 20px;
+  padding: 10px 18px;
   border-radius: var(--radius-pill);
   background: white;
   border: 1px solid var(--border-subtle);
-  font-size: 0.9rem;
+  font-size: 0.88rem;
   font-weight: 700;
   color: var(--brown-800);
   cursor: pointer;
   transition: all var(--transition-fast);
   white-space: nowrap;
+  flex-shrink: 0;
+  scroll-snap-align: start;
 }
 
 .craft-tab-btn.active {
@@ -1467,7 +1542,7 @@
    -------------------------------------------------------------------------- */
 .team-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr));
   gap: 28px;
   margin-top: 48px;
 }
@@ -1647,5 +1722,22 @@
 @media (max-width: 480px) {
   .sim-actions-grid {
     grid-template-columns: 1fr;
+  }
+
+  .modal-content {
+    border-radius: var(--radius-lg);
+    max-height: 94dvh;
+  }
+
+  .modal-header {
+    padding: 12px 14px;
+  }
+
+  .modal-body {
+    padding: 14px;
+  }
+
+  .modal-showcase-grid img {
+    height: 180px !important;
   }
 }
