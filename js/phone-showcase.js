@@ -31,7 +31,7 @@
             <button style="width: 100%; margin-top: 14px; padding: 11px; border-radius: 999px; background: #211712; color: white; font-weight: 700; font-size: 0.85rem;">आगे बढ़ें • Continue</button>
           </div>
 
-          <div style="font-size: 0.68rem; color: #7E6E66;">Smart India Hackathon • Team Melody's</div>
+          <div style="font-size: 0.68rem; color: #7E6E66;">Smart India Hackathon 2026 • Team Melody's</div>
         </div>
       `
     },
