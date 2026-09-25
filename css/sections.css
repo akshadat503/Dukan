@@ -297,12 +297,9 @@ section[id] {
   gap: 16px;
 }
 
-/* --------------------------------------------------------------------------
-   TECH STACK GRID
-   -------------------------------------------------------------------------- */
 .tech-stack-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  grid-template-columns: repeat(3, 1fr);
   gap: 22px;
   margin-top: 48px;
 }
@@ -663,11 +660,6 @@ section[id] {
     gap: 20px;
   }
 
-  .team-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 20px;
-  }
-
   .footer-top {
     grid-template-columns: 1fr 1fr;
     gap: 30px;
@@ -711,6 +703,16 @@ section[id] {
 @media (max-width: 768px) {
   .nav-actions .btn {
     display: none;
+  }
+
+  .team-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+
+  .tech-stack-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 18px;
   }
 
   .workflow-stepper {

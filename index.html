@@ -9,8 +9,11 @@
     content="AI-driven mobile application helping marginalized rural artisans digitize crafts, generate structured catalogs with Google Gemini AI, and connect with markets offline-first.">
 
   <!-- Favicon -->
-  <link rel="icon" type="image/svg+xml" href="favicon.svg">
-  <link rel="alternate icon" href="favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/images/dukan-logo.png?v=2">
+  <link rel="icon" type="image/png" sizes="16x16" href="assets/images/dukan-logo.png?v=2">
+  <link rel="shortcut icon" type="image/png" href="assets/images/dukan-logo.png?v=2">
+  <link rel="apple-touch-icon" href="assets/images/dukan-logo.png?v=2">
+  <link rel="alternate icon" href="favicon.ico?v=2">
 
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -18,9 +21,6 @@
   <link
     href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,600&family=JetBrains+Mono:wght@400;500;600&display=swap"
     rel="stylesheet">
-
-  <!-- Favicon -->
-  <link rel="icon" type="image/png" href="assets/images/dukan-logo.png">
 
   <!-- Stylesheets -->
   <link rel="stylesheet" href="css/design-system.css">
@@ -124,7 +124,7 @@
       font-size: 0.84rem;
       color: var(--text-secondary);
       line-height: 1.5;
-      margin-bottom: 14px;
+      margin-bottom: 0;
     }
 
     .home-feature-card .card-link {
@@ -499,7 +499,6 @@
             <h4>Problem & Solution</h4>
             <p>Understand the rural digital gap and how Dukaan eliminates intermediaries.</p>
           </div>
-          <span class="card-link">View Solution →</span>
         </a>
 
         <a href="#workflow" class="home-feature-card" data-page="workflow">
@@ -513,7 +512,6 @@
             <h4>How It Works & AI</h4>
             <p>Interactive 5-step journey and live Gemini multimodal pipeline demo.</p>
           </div>
-          <span class="card-link">Try AI Engine →</span>
         </a>
 
         <a href="#technology" class="home-feature-card" data-page="technology">
@@ -527,7 +525,6 @@
             <h4>Offline AI & Tech</h4>
             <p>Live offline simulator with SQLite edge caching and background sync.</p>
           </div>
-          <span class="card-link">Test Simulator →</span>
         </a>
 
         <a href="#app-showcase" class="home-feature-card" data-page="app-showcase">
@@ -541,7 +538,6 @@
             <h4>Live App Showcase</h4>
             <p>Explore all 8 screens of the mobile interface designed for artisans.</p>
           </div>
-          <span class="card-link">Test 8 Screens →</span>
         </a>
       </div>
 
@@ -1305,61 +1301,145 @@
         <div class="team-card lead">
           <span class="badge badge-sih" style="position: absolute; top: 14px; right: 14px;">Team Lead</span>
           <div class="team-avatar">
-            <img src="assets/images/ss1.jpeg" alt="Om Gaikwad" class="team-avatar-img">
+            <img src="assets/images/team-om-gaikwad.jpg?v=4" alt="Om Gaikwad" class="team-avatar-img">
           </div>
           <h3 class="team-name">Om Gaikwad</h3>
-          <div class="team-role">Team Lead & Systems Architect</div>
-          <p class="team-desc">System architecture, end-to-end integration, and AI system orchestration for Dukaan.</p>
+          <div class="team-role">Full-Stack Developer</div>
+          <p class="team-desc">Project planning, frontend-backend integration, feature coordination, and overall development.</p>
+          <div class="team-socials">
+            <a href="https://www.linkedin.com/in/om-gaikwad-432b53335/?lipi=urn%3Ali%3Apage%3Ad_flagship3_feed%3BpIrYv1snTRClG6wl80Ql3Q%3D%3D" target="_blank" rel="noopener noreferrer" class="team-social-btn linkedin" title="LinkedIn Profile" aria-label="Om Gaikwad LinkedIn">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/>
+              </svg>
+              <span>LinkedIn</span>
+            </a>
+            <a href="https://github.com/sunnygaikwad-web" target="_blank" rel="noopener noreferrer" class="team-social-btn github" title="GitHub Profile" aria-label="Om Gaikwad GitHub">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/>
+              </svg>
+              <span>GitHub</span>
+            </a>
+          </div>
         </div>
 
         <!-- 2. Akshada Thorat -->
         <div class="team-card">
           <div class="team-avatar">
-            <img src="assets/images/team-akshada-thorat.jpg" alt="Akshada Thorat" class="team-avatar-img">
+            <img src="assets/images/team-akshada-thorat.jpg?v=4" alt="Akshada Thorat" class="team-avatar-img">
           </div>
           <h3 class="team-name">Akshada Thorat</h3>
-          <div class="team-role">AI & NLP Specialist</div>
-          <p class="team-desc">Prompt engineering, multimodal visual parsing, and vernacular language modeling.</p>
+          <div class="team-role">Frontend Developer</div>
+          <p class="team-desc">Responsive UI development, frontend components, API integration, and interactive features.</p>
+          <div class="team-socials">
+            <a href="https://www.linkedin.com/in/akshada-thorat-in/?lipi=urn%3Ali%3Apage%3Ad_flagship3_feed%3B1Fji9UBoS%2BG1b47XSTLMjw%3D%3D" target="_blank" rel="noopener noreferrer" class="team-social-btn linkedin" title="LinkedIn Profile" aria-label="Akshada Thorat LinkedIn">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/>
+              </svg>
+              <span>LinkedIn</span>
+            </a>
+            <a href="https://github.com/akshadat503" target="_blank" rel="noopener noreferrer" class="team-social-btn github" title="GitHub Profile" aria-label="Akshada Thorat GitHub">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/>
+              </svg>
+              <span>GitHub</span>
+            </a>
+          </div>
         </div>
 
         <!-- 3. Santoshi Pawar -->
         <div class="team-card">
           <div class="team-avatar">
-            <img src="assets/images/team-santoshi-pawar.jpg" alt="Santoshi Pawar" class="team-avatar-img">
+            <img src="assets/images/team-santoshi-pawar.jpg?v=4" alt="Santoshi Pawar" class="team-avatar-img">
           </div>
           <h3 class="team-name">Santoshi Pawar</h3>
-          <div class="team-role">Backend & Cloud Engineer</div>
-          <p class="team-desc">Firebase Cloud Firestore schemas, Authentication, and sync engine design.</p>
+          <div class="team-role">UI/UX & Product Designer</div>
+          <p class="team-desc">User flows, wireframes, interface design, usability, and overall product experience.</p>
+          <div class="team-socials">
+            <a href="https://www.linkedin.com/in/santoshi-pawar-47262b312/?lipi=urn%3Ali%3Apage%3Ad_flagship3_feed%3BpIrYv1snTRClG6wl80Ql3Q%3D%3D" target="_blank" rel="noopener noreferrer" class="team-social-btn linkedin" title="LinkedIn Profile" aria-label="Santoshi Pawar LinkedIn">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/>
+              </svg>
+              <span>LinkedIn</span>
+            </a>
+            <a href="https://github.com/santoshipawar1305-png" target="_blank" rel="noopener noreferrer" class="team-social-btn github" title="GitHub Profile" aria-label="Santoshi Pawar GitHub">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/>
+              </svg>
+              <span>GitHub</span>
+            </a>
+          </div>
         </div>
 
         <!-- 4. Harshal Sonawane -->
         <div class="team-card">
           <div class="team-avatar">
-            <img src="assets/images/team-harshal-sonawane.jpg" alt="Harshal Sonawane" class="team-avatar-img">
+            <img src="assets/images/team-harshal-sonawane.jpg?v=4" alt="Harshal Sonawane" class="team-avatar-img">
           </div>
           <h3 class="team-name">Harshal Sonawane</h3>
-          <div class="team-role">Offline Systems & Storage</div>
-          <p class="team-desc">SQLite local caching algorithms, device state persistence, and sync conflict handler.</p>
+          <div class="team-role">Database Developer</div>
+          <p class="team-desc">Database design, data management, queries, storage, and data synchronization.</p>
+          <div class="team-socials">
+            <a href="https://www.linkedin.com/in/harshal-sonawane-6731b8283/?lipi=urn%3Ali%3Apage%3Ad_flagship3_feed%3ByWTykAmmTryGGWoeEEKcNw%3D%3D" target="_blank" rel="noopener noreferrer" class="team-social-btn linkedin" title="LinkedIn Profile" aria-label="Harshal Sonawane LinkedIn">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/>
+              </svg>
+              <span>LinkedIn</span>
+            </a>
+            <a href="https://github.com/harshalsonawanedev" target="_blank" rel="noopener noreferrer" class="team-social-btn github" title="GitHub Profile" aria-label="Harshal Sonawane GitHub">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/>
+              </svg>
+              <span>GitHub</span>
+            </a>
+          </div>
         </div>
 
         <!-- 5. Atharv Bagal -->
         <div class="team-card">
           <div class="team-avatar">
-            <img src="assets/images/team-atharv-bagal.jpg" alt="Atharv Bagal" class="team-avatar-img">
+            <img src="assets/images/team-atharv-bagal.jpg?v=4" alt="Atharv Bagal" class="team-avatar-img">
           </div>
           <h3 class="team-name">Atharv Bagal</h3>
-          <div class="team-role">Mobile Application Developer</div>
-          <p class="team-desc">Flutter client development, camera subsystem, and voice input accessibility.</p>
+          <div class="team-role">AI & LLM Developer</div>
+          <p class="team-desc">LLM integration, prompt engineering, NLP, AI features, and intelligent automation.</p>
+          <div class="team-socials">
+            <a href="https://www.linkedin.com/in/atharva-bagal-6345a12a7/?lipi=urn%3Ali%3Apage%3Ad_flagship3_feed%3ByWTykAmmTryGGWoeEEKcNw%3D%3D" target="_blank" rel="noopener noreferrer" class="team-social-btn linkedin" title="LinkedIn Profile" aria-label="Atharv Bagal LinkedIn">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/>
+              </svg>
+              <span>LinkedIn</span>
+            </a>
+            <a href="https://github.com/Atharvbagal" target="_blank" rel="noopener noreferrer" class="team-social-btn github" title="GitHub Profile" aria-label="Atharv Bagal GitHub">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/>
+              </svg>
+              <span>GitHub</span>
+            </a>
+          </div>
         </div>
 
         <!-- 6. Paras Salunke -->
         <div class="team-card">
           <div class="team-avatar">
-            <img src="assets/images/team-paras-salunke.jpg" alt="Paras Salunke" class="team-avatar-img">
+            <img src="assets/images/team-paras-salunke.jpg?v=4" alt="Paras Salunke" class="team-avatar-img">
           </div>
           <h3 class="team-name">Paras Salunke</h3>
-          <div class="team-role">UI/UX & Market Linkage</div>
-          <p class="team-desc">Artisan-centered design workflows, storefront layout, and buyer interaction flows.</p>
+          <div class="team-role">Backend Developer</div>
+          <p class="team-desc">API development, authentication, server-side logic, and backend integration.</p>
+          <div class="team-socials">
+            <a href="https://www.linkedin.com/in/paras-salunke-9b58063ab/?lipi=urn%3Ali%3Apage%3Ad_flagship3_feed%3BpIrYv1snTRClG6wl80Ql3Q%3D%3D" target="_blank" rel="noopener noreferrer" class="team-social-btn linkedin" title="LinkedIn Profile" aria-label="Paras Salunke LinkedIn">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/>
+              </svg>
+              <span>LinkedIn</span>
+            </a>
+            <a href="https://github.com/SalunkeParas" target="_blank" rel="noopener noreferrer" class="team-social-btn github" title="GitHub Profile" aria-label="Paras Salunke GitHub">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/>
+              </svg>
+              <span>GitHub</span>
+            </a>
+          </div>
         </div>
 
       </div>
@@ -1423,9 +1503,6 @@
           <p class="footer-brand-desc" style="margin-top: 10px;">
             AI-Driven Market Linkage and Smart Cataloging Mobile Application for Marginalized Artisans.
           </p>
-          <div style="margin-top: 14px;">
-            <span class="badge badge-sih">Smart India Hackathon 2026</span>
-          </div>
         </div>
 
         <div>
