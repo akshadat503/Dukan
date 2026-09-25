@@ -19,6 +19,14 @@ const MIME_TYPES = {
 function startServer(attemptPort) {
   const server = http.createServer((req, res) => {
     let cleanUrl = req.url.split('?')[0];
+
+    // Browser devtools or well-known probe requests
+    if (cleanUrl.startsWith('/.well-known/')) {
+      res.writeHead(200, { 'Content-Type': 'application/json' });
+      res.end('{}');
+      return;
+    }
+
     let safePath = path.normalize(decodeURIComponent(cleanUrl));
 
     // Normalize root path
@@ -35,12 +43,10 @@ function startServer(attemptPort) {
       ext = '.html';
     }
 
-    // Special handling for favicon.ico fallback
-    if ((safePath === 'favicon.ico' || safePath === '\\favicon.ico') && !fs.existsSync(filePath)) {
-      if (fs.existsSync(path.join(__dirname, 'favicon.svg'))) {
-        filePath = path.join(__dirname, 'favicon.svg');
-        ext = '.svg';
-      }
+    // Special handling for favicon requests
+    if (safePath === 'favicon.ico' || safePath === '\\favicon.ico' || safePath === 'favicon.png' || safePath === '\\favicon.png') {
+      filePath = path.join(__dirname, 'assets', 'images', 'dukan-logo.png');
+      ext = '.png';
     }
 
     let contentType = MIME_TYPES[ext] || 'application/octet-stream';

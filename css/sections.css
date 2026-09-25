@@ -663,11 +663,6 @@ section[id] {
     gap: 20px;
   }
 
-  .team-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 20px;
-  }
-
   .footer-top {
     grid-template-columns: 1fr 1fr;
     gap: 30px;
@@ -676,6 +671,11 @@ section[id] {
 
 /* TABLETS PORTRAIT & COMPACT LAPTOPS (<= 860px) */
 @media (max-width: 860px) {
+  .team-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+
   .page-section {
     padding-top: 48px !important;
     padding-bottom: 48px !important;
