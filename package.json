@@ -1,0 +1,12 @@
+{
+  "name": "dukan",
+  "version": "1.0.0",
+  "description": "AI-Driven Market Linkage and Smart Cataloging Platform for Marginalized Artisans",
+  "main": "serve.js",
+  "scripts": {
+    "start": "node serve.js",
+    "test": "node test-server.js"
+  },
+  "dependencies": {},
+  "devDependencies": {}
+}

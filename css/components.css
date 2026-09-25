@@ -42,25 +42,31 @@
 }
 
 .brand-emblem {
-  width: 42px;
-  height: 42px;
+  width: 44px;
+  height: 44px;
   border-radius: 12px;
-  background: linear-gradient(135deg, var(--terracotta-500) 0%, var(--saffron-500) 100%);
+  background: white;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: white;
-  box-shadow: 0 4px 14px rgba(200, 90, 50, 0.35);
-  transition: transform var(--transition-fast);
+  box-shadow: 0 4px 14px rgba(200, 90, 50, 0.2);
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+  overflow: hidden;
+  padding: 2px;
+  border: 1px solid var(--border-warm);
+}
+
+.brand-logo-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+  display: block;
 }
 
 .brand-logo:hover .brand-emblem {
-  transform: scale(1.05) rotate(2deg);
-}
-
-.brand-emblem svg {
-  width: 24px;
-  height: 24px;
+  transform: scale(1.06) rotate(2deg);
+  box-shadow: 0 6px 18px rgba(200, 90, 50, 0.3);
 }
 
 .brand-text {
@@ -1500,8 +1506,8 @@
 }
 
 .team-avatar {
-  width: 80px;
-  height: 80px;
+  width: 96px;
+  height: 96px;
   border-radius: 50%;
   background: var(--terracotta-50);
   border: 3px solid var(--border-warm);
@@ -1513,12 +1519,35 @@
   font-weight: 800;
   color: var(--terracotta-600);
   margin-bottom: 18px;
+  overflow: hidden;
+  box-shadow: 0 4px 14px rgba(45, 30, 20, 0.12);
+  transition: transform var(--transition-fast), border-color var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.team-avatar-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  display: block;
+  transition: transform var(--transition-fast);
+}
+
+.team-card:hover .team-avatar {
+  transform: scale(1.06);
+  border-color: var(--terracotta-500);
+  box-shadow: 0 8px 20px rgba(200, 90, 50, 0.25);
+}
+
+.team-card:hover .team-avatar-img {
+  transform: scale(1.05);
 }
 
 .team-card.lead .team-avatar {
   background: var(--saffron-100);
   border-color: var(--saffron-400);
   color: var(--saffron-600);
+  box-shadow: 0 6px 18px rgba(229, 169, 60, 0.3);
 }
 
 .team-name {

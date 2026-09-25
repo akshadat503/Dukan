@@ -15,6 +15,9 @@
     href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,600&family=JetBrains+Mono:wght@400;500;600&display=swap"
     rel="stylesheet">
 
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="assets/images/dukan-logo.png">
+
   <!-- Stylesheets -->
   <link rel="stylesheet" href="css/design-system.css">
   <link rel="stylesheet" href="css/components.css">
@@ -164,12 +167,7 @@
     <div class="container navbar-inner">
       <a href="#hero" class="brand-logo" data-page="hero" aria-label="Dukaan Home">
         <div class="brand-emblem">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-            stroke-linejoin="round">
-            <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
-            <line x1="3" y1="6" x2="21" y2="6"></line>
-            <path d="M16 10a4 4 0 0 1-8 0"></path>
-          </svg>
+          <img src="assets/images/dukan-logo.png" alt="Dukan Logo" class="brand-logo-img">
         </div>
         <div class="brand-text">
           <span class="brand-name">Dukaan</span>
@@ -184,9 +182,7 @@
           <li class="mobile-menu-header">
             <div class="mobile-menu-brand">
               <div class="brand-emblem">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                  <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
-                </svg>
+                <img src="assets/images/dukan-logo.png" alt="Dukan Logo" class="brand-logo-img">
               </div>
               <span class="brand-name">Dukaan</span>
             </div>
@@ -233,7 +229,8 @@
                 <polygon points="5 3 19 12 5 21 5 3"></polygon>
               </svg>
             </button>
-            <div style="font-size: 0.75rem; color: var(--text-muted); text-align: center;">Team Melody's • Smart India Hackathon 2026</div>
+            <div style="font-size: 0.75rem; color: var(--text-muted); text-align: center;">Team Melody's • Smart India
+              Hackathon 2026</div>
           </li>
         </ul>
       </nav>
@@ -341,10 +338,14 @@
               <!-- Catalog Preview Inside Phone -->
               <div class="phone-screen-content" style="padding: 12px 14px; background: #FAF7F2;">
                 <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
-                  <div>
-                    <div style="font-size: 0.65rem; color: #C85A32; font-weight: 800; text-transform: uppercase;">Dukaan
-                      AI Assistant</div>
-                    <div style="font-size: 0.95rem; font-weight: 800; color: #211915;">Khurja Earthen Vessel</div>
+                  <div style="display: flex; align-items: center; gap: 8px;">
+                    <img src="assets/images/dukan-logo.png" alt="Dukan App Logo"
+                      style="width: 28px; height: 28px; border-radius: 7px; box-shadow: 0 2px 6px rgba(0,0,0,0.1);">
+                    <div>
+                      <div style="font-size: 0.65rem; color: #C85A32; font-weight: 800; text-transform: uppercase;">
+                        Dukaan AI Assistant</div>
+                      <div style="font-size: 0.95rem; font-weight: 800; color: #211915;">Khurja Earthen Vessel</div>
+                    </div>
                   </div>
                   <span
                     style="font-size: 0.65rem; background: #EAF5EE; color: #2E7D52; font-weight: 800; padding: 2px 8px; border-radius: 999px;">98%
@@ -1300,50 +1301,62 @@
       <!-- 6 Team Cards -->
       <div class="team-grid" style="margin-top: 40px;">
 
-        <!-- Team Lead: Om Gaikwad -->
+        <!-- 1. Om Gaikwad (Team Lead) -->
         <div class="team-card lead">
           <span class="badge badge-sih" style="position: absolute; top: 14px; right: 14px;">Team Lead</span>
-          <div class="team-avatar">OG</div>
+          <div class="team-avatar">
+            <img src="assets/images/ss1.jpeg" alt="Om Gaikwad" class="team-avatar-img">
+          </div>
           <h3 class="team-name">Om Gaikwad</h3>
           <div class="team-role">Team Lead & Systems Architect</div>
           <p class="team-desc">System architecture, end-to-end integration, and AI system orchestration for Dukaan.</p>
         </div>
 
-        <!-- Akshada Thorat -->
+        <!-- 2. Akshada Thorat -->
         <div class="team-card">
-          <div class="team-avatar">AT</div>
+          <div class="team-avatar">
+            <img src="assets/images/team-akshada-thorat.jpg" alt="Akshada Thorat" class="team-avatar-img">
+          </div>
           <h3 class="team-name">Akshada Thorat</h3>
           <div class="team-role">AI & NLP Specialist</div>
           <p class="team-desc">Prompt engineering, multimodal visual parsing, and vernacular language modeling.</p>
         </div>
 
-        <!-- Athrav Bagal -->
+        <!-- 3. Santoshi Pawar -->
         <div class="team-card">
-          <div class="team-avatar">AB</div>
-          <h3 class="team-name">Athrav Bagal</h3>
-          <div class="team-role">Mobile Application Developer</div>
-          <p class="team-desc">Flutter client development, camera subsystem, and voice input accessibility.</p>
-        </div>
-
-        <!-- Santoshi Pawar -->
-        <div class="team-card">
-          <div class="team-avatar">SP</div>
+          <div class="team-avatar">
+            <img src="assets/images/team-santoshi-pawar.jpg" alt="Santoshi Pawar" class="team-avatar-img">
+          </div>
           <h3 class="team-name">Santoshi Pawar</h3>
           <div class="team-role">Backend & Cloud Engineer</div>
           <p class="team-desc">Firebase Cloud Firestore schemas, Authentication, and sync engine design.</p>
         </div>
 
-        <!-- Harshal Sonawane -->
+        <!-- 4. Harshal Sonawane -->
         <div class="team-card">
-          <div class="team-avatar">HS</div>
+          <div class="team-avatar">
+            <img src="assets/images/team-harshal-sonawane.jpg" alt="Harshal Sonawane" class="team-avatar-img">
+          </div>
           <h3 class="team-name">Harshal Sonawane</h3>
           <div class="team-role">Offline Systems & Storage</div>
           <p class="team-desc">SQLite local caching algorithms, device state persistence, and sync conflict handler.</p>
         </div>
 
-        <!-- Paras Salunke -->
+        <!-- 5. Atharv Bagal -->
         <div class="team-card">
-          <div class="team-avatar">PS</div>
+          <div class="team-avatar">
+            <img src="assets/images/team-atharv-bagal.jpg" alt="Atharv Bagal" class="team-avatar-img">
+          </div>
+          <h3 class="team-name">Atharv Bagal</h3>
+          <div class="team-role">Mobile Application Developer</div>
+          <p class="team-desc">Flutter client development, camera subsystem, and voice input accessibility.</p>
+        </div>
+
+        <!-- 6. Paras Salunke -->
+        <div class="team-card">
+          <div class="team-avatar">
+            <img src="assets/images/team-paras-salunke.jpg" alt="Paras Salunke" class="team-avatar-img">
+          </div>
           <h3 class="team-name">Paras Salunke</h3>
           <div class="team-role">UI/UX & Market Linkage</div>
           <p class="team-desc">Artisan-centered design workflows, storefront layout, and buyer interaction flows.</p>
@@ -1399,10 +1412,8 @@
 
         <div>
           <div class="brand-logo">
-            <div class="brand-emblem" style="width: 36px; height: 36px;">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
-              </svg>
+            <div class="brand-emblem" style="width: 44px; height: 44px;">
+              <img src="assets/images/dukan-logo.png" alt="Dukan Logo" class="brand-logo-img">
             </div>
             <div class="brand-text">
               <span class="brand-name" style="color: white; font-size: 1.2rem;">Dukaan</span>
