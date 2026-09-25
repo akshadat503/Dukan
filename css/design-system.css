@@ -1,0 +1,334 @@
+/* ==========================================================================
+   DUKAAN DESIGN SYSTEM
+   Traditional Indian Craftsmanship × Modern AI × Digital Commerce
+   ========================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Inter:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Rozha+One&display=swap');
+
+:root {
+  /* Surface & Background Colors */
+  --bg-cream-primary: #FAF7F2;
+  --bg-cream-subtle: #F4EFE6;
+  --bg-cream-card: #FFFFFF;
+  --bg-cream-warm: #FBF8F4;
+  --bg-terracotta-tint: #F7EDE8;
+
+  /* Dark Clay & Charcoal Sections */
+  --bg-dark-primary: #1A1412;
+  --bg-dark-surface: #241D1A;
+  --bg-dark-card: #2D2521;
+  --bg-dark-card-hover: #362D28;
+  --border-dark-subtle: rgba(255, 255, 255, 0.08);
+
+  /* Earth & Terracotta Palette */
+  --terracotta-50: #FBF4F1;
+  --terracotta-100: #F6E6DF;
+  --terracotta-200: #EDC9BC;
+  --terracotta-300: #E1A793;
+  --terracotta-400: #D37E61;
+  --terracotta-500: #C85A32;
+  --terracotta-600: #B24623;
+  --terracotta-700: #8E3416;
+  --terracotta-800: #6B2710;
+  --terracotta-900: #4A1B0B;
+
+  /* Saffron, Ochre & Gold Accents */
+  --saffron-100: #FEF3E2;
+  --saffron-300: #F9D08B;
+  --saffron-400: #F3B04A;
+  --saffron-500: #D9822B;
+  --saffron-600: #B86716;
+  --gold-accent: #E5A93C;
+  --gold-glow: rgba(229, 169, 60, 0.25);
+
+  /* Deep Brown & Craft Woods */
+  --brown-900: #211712;
+  --brown-800: #33241C;
+  --brown-700: #4A362B;
+  --brown-600: #694F3F;
+  --brown-500: #8C6D58;
+
+  /* Text Colors */
+  --text-primary: #211915;
+  --text-secondary: #564841;
+  --text-muted: #7E6E66;
+  --text-subtle: #A3938B;
+  --text-on-dark: #FBF7F2;
+  --text-on-dark-muted: #BDB0A8;
+  --text-on-dark-subtle: #8E827B;
+
+  /* Functional / Status Colors */
+  --status-online: #2E7D52;
+  --status-online-bg: #EAF5EE;
+  --status-offline: #D97706;
+  --status-offline-bg: #FEF3E2;
+  --status-sync: #2563EB;
+  --status-sync-bg: #EFF6FF;
+
+  /* Borders & Dividers */
+  --border-subtle: rgba(74, 54, 43, 0.1);
+  --border-warm: rgba(200, 90, 50, 0.18);
+  --border-gold: rgba(229, 169, 60, 0.35);
+
+  /* Shadows */
+  --shadow-sm: 0 2px 6px rgba(45, 30, 20, 0.04);
+  --shadow-md: 0 8px 24px rgba(45, 30, 20, 0.07);
+  --shadow-lg: 0 16px 40px -10px rgba(45, 30, 20, 0.12);
+  --shadow-xl: 0 24px 60px -15px rgba(45, 30, 20, 0.16);
+  --shadow-terracotta: 0 12px 30px -8px rgba(200, 90, 50, 0.35);
+  --shadow-dark: 0 20px 50px rgba(0, 0, 0, 0.3);
+
+  /* Typography Families */
+  --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-serif: 'Cinzel', serif;
+  --font-heading: 'Plus Jakarta Sans', sans-serif;
+  --font-craft-accent: 'Cinzel', serif;
+
+  /* Radii */
+  --radius-sm: 8px;
+  --radius-md: 14px;
+  --radius-lg: 20px;
+  --radius-xl: 28px;
+  --radius-pill: 9999px;
+
+  /* Layout */
+  --container-max: 1240px;
+  --container-wide: 1360px;
+  --header-height: 80px;
+
+  /* Transitions */
+  --transition-fast: 0.18s ease;
+  --transition-normal: 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-slow: 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* ==========================================================================
+   CSS RESET & BASE
+   ========================================================================== */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: var(--bg-cream-primary);
+  color: var(--text-primary);
+  line-height: 1.6;
+  overflow-x: hidden;
+  position: relative;
+}
+
+/* Craft Texture Subtle Background Overlay */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image: radial-gradient(rgba(200, 90, 50, 0.035) 1px, transparent 1px);
+  background-size: 32px 32px;
+  pointer-events: none;
+  z-index: 0;
+}
+
+img, svg, video {
+  display: block;
+  max-width: 100%;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+  border: none;
+  background: none;
+  outline: none;
+}
+
+/* Container */
+.container {
+  width: 100%;
+  max-width: var(--container-max);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: clamp(16px, 4vw, 28px);
+  padding-right: clamp(16px, 4vw, 28px);
+  position: relative;
+  z-index: 1;
+}
+
+.container-wide {
+  width: 100%;
+  max-width: var(--container-wide);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: clamp(16px, 4vw, 28px);
+  padding-right: clamp(16px, 4vw, 28px);
+  position: relative;
+  z-index: 1;
+}
+
+/* Touch targets and tap highlight improvements for mobile */
+@media (hover: none) and (pointer: coarse) {
+  a, button, input, select, textarea, [role="button"] {
+    -webkit-tap-highlight-color: rgba(200, 90, 50, 0.15);
+  }
+}
+
+/* Typography Helpers */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  color: var(--text-primary);
+  font-weight: 700;
+  line-height: 1.25;
+  letter-spacing: -0.02em;
+}
+
+.heading-hero {
+  font-size: clamp(1.85rem, 5.5vw, 3.85rem);
+  font-weight: 800;
+  line-height: 1.15;
+  letter-spacing: -0.03em;
+  color: var(--brown-900);
+}
+
+.heading-section {
+  font-size: clamp(1.45rem, 3.6vw, 2.75rem);
+  font-weight: 800;
+  line-height: 1.2;
+  letter-spacing: -0.025em;
+  color: var(--brown-900);
+}
+
+.heading-section.on-dark {
+  color: var(--text-on-dark);
+}
+
+.subheading-lead {
+  font-size: clamp(0.92rem, 1.35vw, 1.2rem);
+  color: var(--text-secondary);
+  line-height: 1.6;
+  font-weight: 400;
+  max-width: 680px;
+}
+
+.subheading-lead.on-dark {
+  color: var(--text-on-dark-muted);
+}
+
+.section-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-sans);
+  font-size: 0.82rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--terracotta-600);
+  background: var(--terracotta-100);
+  padding: 6px 14px;
+  border-radius: var(--radius-pill);
+  margin-bottom: 16px;
+  border: 1px solid var(--border-warm);
+}
+
+.section-label.on-dark {
+  background: rgba(200, 90, 50, 0.16);
+  color: var(--saffron-400);
+  border-color: rgba(229, 169, 60, 0.3);
+}
+
+.section-label svg {
+  width: 14px;
+  height: 14px;
+  color: currentColor;
+}
+
+/* Craft Gradient Accent Text */
+.text-terracotta {
+  color: var(--terracotta-500);
+}
+
+.text-gradient-earth {
+  background: linear-gradient(135deg, var(--terracotta-600) 0%, var(--saffron-500) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.text-gradient-gold {
+  background: linear-gradient(135deg, var(--gold-accent) 0%, #FFD68A 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Section Wrapper Base */
+.section {
+  padding-top: clamp(70px, 9vw, 110px);
+  padding-bottom: clamp(70px, 9vw, 110px);
+  position: relative;
+  overflow: hidden;
+}
+
+.section-dark {
+  background-color: var(--bg-dark-primary);
+  color: var(--text-on-dark);
+}
+
+.section-cream-subtle {
+  background-color: var(--bg-cream-subtle);
+}
+
+/* Subtle Indian Craft Border Motif */
+.craft-border-top {
+  position: relative;
+}
+
+.craft-border-top::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 6px;
+  background: repeating-linear-gradient(
+    90deg,
+    var(--terracotta-500) 0px,
+    var(--terracotta-500) 18px,
+    transparent 18px,
+    transparent 24px,
+    var(--saffron-500) 24px,
+    var(--saffron-500) 36px,
+    transparent 36px,
+    transparent 42px
+  );
+  opacity: 0.85;
+}
+
+/* Accessibility: Focus visible */
+:focus-visible {
+  outline: 2px solid var(--terracotta-500);
+  outline-offset: 3px;
+}
+
+/* Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
