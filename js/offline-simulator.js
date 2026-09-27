@@ -167,6 +167,6 @@
 
   // Initialize
   updateUI();
-  appendLog('SYSTEM', 'tag-offline', 'Dukaan Offline Simulator initialized.');
+  appendLog('SYSTEM', 'tag-offline', 'ShilpSetu Offline Simulator initialized.');
   appendLog('ARCHITECTURE', 'tag-offline', 'Designed for offline-first AI-assisted listing workflows.');
 })();

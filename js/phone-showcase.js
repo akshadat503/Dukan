@@ -11,12 +11,12 @@
       title: 'Splash & Vernacular Welcome',
       desc: 'Simple, respectful onboarding in Hindi, English, and regional languages designed for artisans with varying digital literacy levels.',
       render: () => `
-        <div style="height: 100%; display: flex; flex-direction: column; justify-content: space-between; padding: 28px 18px 20px; background: linear-gradient(180deg, #FBF8F4 0%, #F5ECE0 100%); text-align: center;">
-          <div style="margin-top: 30px;">
-            <div style="width: 58px; height: 58px; margin: 0 auto 14px; border-radius: 16px; background: linear-gradient(135deg, #C85A32, #D9822B); display: flex; align-items: center; justify-content: center; color: white; box-shadow: 0 8px 20px rgba(200,90,50,0.35);">
-              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+        <div style="height: 100%; display: flex; flex-direction: column; justify-content: space-between; padding: 24px 18px 18px; background: linear-gradient(180deg, #FBF8F4 0%, #F5ECE0 100%); text-align: center;">
+          <div style="margin-top: 18px;">
+            <div style="width: 64px; height: 64px; margin: 0 auto 14px; border-radius: 18px; background: linear-gradient(135deg, #C85A32, #D9822B); display: flex; align-items: center; justify-content: center; box-shadow: 0 8px 22px rgba(200,90,50,0.38); padding: 6px; overflow: hidden;">
+              <img src="assets/images/shilpsetu-logo.png" alt="ShilpSetu Logo" style="width: 100%; height: 100%; object-fit: contain; border-radius: 12px;">
             </div>
-            <h3 style="font-size: 1.45rem; font-weight: 800; color: #211915; margin-bottom: 4px;">दुकान • Dukaan</h3>
+            <h3 style="font-size: 1.45rem; font-weight: 800; color: #211915; margin-bottom: 4px;">शिल्पसेतु • ShilpSetu</h3>
             <p style="font-size: 0.78rem; font-weight: 700; color: #C85A32; letter-spacing: 0.05em; text-transform: uppercase;">हस्तशिल्प से डिजिटल बाज़ार तक</p>
           </div>
 
@@ -28,7 +28,7 @@
               <div style="padding: 10px; border-radius: 10px; background: #FAF7F2; border: 1px solid #E1A793; color: #211915; font-weight: 600; font-size: 0.84rem;">मराठी (Marathi)</div>
               <div style="padding: 10px; border-radius: 10px; background: #FAF7F2; border: 1px solid #E1A793; color: #211915; font-weight: 600; font-size: 0.84rem;">বাংলা (Bengali)</div>
             </div>
-            <button style="width: 100%; margin-top: 14px; padding: 11px; border-radius: 999px; background: #211712; color: white; font-weight: 700; font-size: 0.85rem;">आगे बढ़ें • Continue</button>
+            <button onclick="window.showPhoneScreen &amp;&amp; window.showPhoneScreen('home')" style="width: 100%; margin-top: 14px; padding: 11px; border-radius: 999px; background: #211712; color: white; font-weight: 700; font-size: 0.85rem; cursor: pointer;">आगे बढ़ें • Continue</button>
           </div>
 
           <div style="font-size: 0.68rem; color: #7E6E66;">Smart India Hackathon 2026 • Team Melody's</div>
@@ -42,9 +42,12 @@
       render: () => `
         <div style="padding: 16px 14px; background: #FAF7F2; min-height: 100%;">
           <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px;">
-            <div>
-              <div style="font-size: 0.72rem; color: #7E6E66; font-weight: 600;">नमस्ते • Welcome back</div>
-              <div style="font-size: 1.15rem; font-weight: 800; color: #211915;">रमेश कुम्हार (Ramesh)</div>
+            <div style="display: flex; align-items: center; gap: 8px;">
+              <img src="assets/images/shilpsetu-logo.png" alt="ShilpSetu Logo" style="width: 32px; height: 32px; border-radius: 8px; object-fit: contain; background: linear-gradient(135deg, #C85A32, #D9822B); padding: 3px;">
+              <div>
+                <div style="font-size: 0.68rem; color: #7E6E66; font-weight: 600;">नमस्ते • Welcome back</div>
+                <div style="font-size: 1.05rem; font-weight: 800; color: #211915;">रमेश कुम्हार (Ramesh)</div>
+              </div>
             </div>
             <div style="width: 34px; height: 34px; border-radius: 50%; background: #F6E6DF; display: flex; align-items: center; justify-content: center; color: #C85A32; font-weight: 800; font-size: 0.85rem; border: 1.5px solid #E1A793;">RK</div>
           </div>
@@ -138,9 +141,12 @@
       title: 'AI Smart Cataloging Generation',
       desc: 'Google Gemini analyzes craft visuals and audio transcript to extract category, craft technique, materials, and suggested description.',
       render: () => `
-        <div style="padding: 16px 14px; background: #FAF7F2; min-height: 100%;">
-          <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 12px;">
-            <span style="font-size: 0.7rem; font-weight: 800; background: #F6E6DF; color: #C85A32; padding: 3px 8px; border-radius: 999px;">AI Processing Complete</span>
+          <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 12px;">
+            <div style="display: flex; align-items: center; gap: 6px;">
+              <img src="assets/images/shilpsetu-logo.png" alt="ShilpSetu Logo" style="width: 24px; height: 24px; border-radius: 6px; object-fit: contain; background: linear-gradient(135deg, #C85A32, #D9822B); padding: 2px;">
+              <span style="font-size: 0.76rem; font-weight: 800; color: #211915;">ShilpSetu AI</span>
+            </div>
+            <span style="font-size: 0.68rem; font-weight: 800; background: #F6E6DF; color: #C85A32; padding: 3px 8px; border-radius: 999px;">AI Processing Complete</span>
           </div>
 
           <div style="background: white; border-radius: 12px; padding: 12px; border: 1px solid #EDC9BC; margin-bottom: 12px;">
@@ -260,7 +266,7 @@
           </div>
 
           <div style="font-size: 0.68rem; color: #7E6E66; text-align: center;">
-            Dukaan connects buyers directly to rural artisans with transparent pricing.
+            ShilpSetu connects buyers directly to rural artisans with transparent pricing.
           </div>
         </div>
       `
@@ -328,7 +334,10 @@
     });
   });
 
-  // Default initial screen
-  showScreen('ai_catalog');
+  // Expose global for interactive buttons
+  window.showPhoneScreen = showScreen;
+
+  // Default initial screen (1. Welcome & Language)
+  showScreen('splash');
 
 })();

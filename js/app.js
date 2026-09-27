@@ -169,16 +169,25 @@
   // INITIALIZE ON LOAD
   // -------------------------------------------------------------------------
   function init() {
+    if ('scrollRestoration' in history) {
+      history.scrollRestoration = 'manual';
+    }
+
     initScrollSpy();
 
     const hash = window.location.hash;
-    if (hash && hash.length > 1) {
+    if (hash && hash.length > 1 && hash !== '#hero') {
       const startPage = resolvePageId(hash);
       if (startPage && startPage !== 'hero') {
         setTimeout(() => {
           scrollToSection(startPage, false);
         }, 150);
+      } else {
+        window.scrollTo({ top: 0, behavior: 'auto' });
       }
+    } else {
+      window.scrollTo({ top: 0, behavior: 'auto' });
+      updateActiveNav('hero');
     }
   }
 
@@ -242,7 +251,7 @@
     {
       num: '03',
       title: 'Create',
-      desc: 'Dukaan assists in generating structured catalog fields: standardized product title, market-ready description, suggested craft category, verified material tags, and recommended pricing ranges.',
+      desc: 'ShilpSetu assists in generating structured catalog fields: standardized product title, market-ready description, suggested craft category, verified material tags, and recommended pricing ranges.',
       tag: 'Step 3: Catalog Synthesis'
     },
     {

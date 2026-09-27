@@ -1,5 +1,5 @@
 /* ==========================================================================
-   DUKAAN UI COMPONENTS
+   SHILPSETU UI COMPONENTS
    Buttons, Badges, Phone Mockups, Cards, Simulators & Interactive Elements
    ========================================================================== */
 
@@ -590,7 +590,7 @@
   display: none;
 }
 
-/* Dukaan App Bottom Navigation inside Phone */
+/* ShilpSetu App Bottom Navigation inside Phone */
 .app-bottom-nav {
   height: 52px;
   background: white;
@@ -898,7 +898,7 @@
 }
 
 /* --------------------------------------------------------------------------
-   TRANSFORMATION ("MEET DUKAAN")
+   TRANSFORMATION ("MEET SHILPSETU")
    -------------------------------------------------------------------------- */
 .transformation-container {
   display: grid;
@@ -925,7 +925,7 @@
   transform: translateY(-4px);
 }
 
-.transform-stage-card.dukaan-core {
+.transform-stage-card.shilpsetu-core {
   background: linear-gradient(135deg, #FFF9F5 0%, #FFF2EC 100%);
   border: 2px solid var(--terracotta-400);
   box-shadow: 0 12px 36px -10px rgba(200, 90, 50, 0.25);
@@ -947,7 +947,7 @@
   color: #7A6960;
 }
 
-.pill-dukaan {
+.pill-shilpsetu {
   background: var(--terracotta-500);
   color: white;
 }

@@ -45,7 +45,7 @@ function startServer(attemptPort) {
 
     // Special handling for favicon requests
     if (safePath === 'favicon.ico' || safePath === '\\favicon.ico' || safePath === 'favicon.png' || safePath === '\\favicon.png') {
-      filePath = path.join(__dirname, 'assets', 'images', 'dukan-logo.png');
+      filePath = path.join(__dirname, 'assets', 'images', 'shilpsetu-logo.png');
       ext = '.png';
     }
 
@@ -81,7 +81,7 @@ function startServer(attemptPort) {
 
   server.listen(attemptPort, () => {
     console.log(`\n==================================================`);
-    console.log(`  🚀 Dukaan Web App is running!`);
+    console.log(`  🚀 ShilpSetu Web App is running!`);
     console.log(`  Local URL:  http://localhost:${attemptPort}/`);
     console.log(`==================================================\n`);
   });
