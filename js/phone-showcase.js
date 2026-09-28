@@ -133,9 +133,11 @@
     navButtons.forEach(btn => {
       if (btn.getAttribute('data-screen') === key) {
         btn.classList.add('active');
-        // Keep active button visible in horizontal scroll on mobile
-        if (btn.scrollIntoView && window.innerWidth <= 860) {
-          btn.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+        // Keep active button visible in horizontal toolbar on mobile WITHOUT scrolling the page window
+        const navContainer = btn.closest('.app-showcase-nav');
+        if (navContainer && window.innerWidth <= 860) {
+          const targetLeft = btn.offsetLeft - (navContainer.clientWidth / 2) + (btn.clientWidth / 2);
+          navContainer.scrollTo({ left: Math.max(0, targetLeft), behavior: 'smooth' });
         }
       } else {
         btn.classList.remove('active');
@@ -154,13 +156,27 @@
     });
   });
 
-  // Start autoplay immediately on load
-  startAutoplay();
+  // Only autoplay when #app-showcase section is actually visible on screen
+  const showcaseSection = document.getElementById('app-showcase');
+  if (showcaseSection && 'IntersectionObserver' in window) {
+    const showcaseObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          startAutoplay();
+        } else {
+          stopAutoplay();
+        }
+      });
+    }, { threshold: 0.08 });
+    showcaseObserver.observe(showcaseSection);
+  } else {
+    startAutoplay();
+  }
 
   // Expose global for interactive buttons
   window.showPhoneScreen = (key) => showScreen(key, true);
 
-  // Default initial screen (1. Welcome & Login)
-  showScreen('splash', true);
+  // Default initial screen (1. Welcome & Login) without resetting timer or triggering window scroll
+  showScreen('splash', false);
 
 })();

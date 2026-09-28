@@ -605,8 +605,10 @@
       dots.forEach((dot, idx) => {
         if (idx === currentSlide) {
           dot.classList.add('active');
-          if (dot.scrollIntoView && window.innerWidth <= 860) {
-            dot.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+          const dotsContainer = dot.parentElement;
+          if (dotsContainer && window.innerWidth <= 860) {
+            const targetLeft = dot.offsetLeft - (dotsContainer.clientWidth / 2) + (dot.clientWidth / 2);
+            dotsContainer.scrollTo({ left: Math.max(0, targetLeft), behavior: 'smooth' });
           }
         } else {
           dot.classList.remove('active');
