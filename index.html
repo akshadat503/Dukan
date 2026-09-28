@@ -7,6 +7,7 @@
   <title>ShilpSetu — AI-Powered Digital Assistance for Artisans | Smart India Hackathon</title>
   <meta name="description"
     content="AI-driven mobile application helping marginalized rural artisans digitize crafts, generate structured catalogs with Google Gemini AI, and connect with markets offline-first.">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
 
   <!-- Favicon -->
   <link rel="icon" type="image/png" sizes="32x32" href="assets/images/shilpsetu-logo.png?v=2">
@@ -482,24 +483,20 @@
       <div class="video-showcase-split scroll-slide" id="judge-video-section">
         <!-- Left Column: Video Player -->
         <div class="video-split-media scroll-slide-left">
-          <div class="video-split-frame">
-            <video id="judge-demo-video" controls playsinline preload="metadata"
-              poster="assets/images/craft-pottery.jpg">
-              <source src="assets/videos/SIH Prototype Presentation Video.mp4" type="video/mp4">
-            </video>
-            <!-- Floating Unmute Audio Button if browser autoplays muted -->
-            <button id="video-unmute-btn" class="video-unmute-badge" style="display: none;" aria-label="Unmute Video Audio">
-              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-                <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
-                <path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"></path>
-              </svg>
-              <span>Click to Unmute Audio</span>
-            </button>
+          <div class="video-container">
+            <iframe
+              src="https://www.youtube.com/embed/UzZvbIp5sio"
+              title="SIH Prototype Presentation Video"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerpolicy="strict-origin-when-cross-origin"
+              allowfullscreen>
+            </iframe>
           </div>
-          <label class="video-split-preview-trigger" title="Select a local MP4 file to test in this browser">
-            <span> Working Prototype </span>
-            <input type="file" id="judge-video-file-picker" accept="video/mp4,video/webm" style="display: none;">
-          </label>
+          <a href="https://www.youtube.com/watch?v=UzZvbIp5sio" target="_blank" rel="noopener noreferrer" class="video-split-preview-trigger" title="Watch on YouTube">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="#FF0000"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+            <span>Watch Full Video on YouTube</span>
+          </a>
         </div>
 
         <!-- Right Column: Text & 2 Action Buttons -->

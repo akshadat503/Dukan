@@ -376,7 +376,7 @@
 
     // 5. Scale-up elements — images, phone mockups
     const scaleElements = document.querySelectorAll(
-      '.phone-chassis, .ai-preview-card, .ai-catalog-result, .video-split-frame'
+      '.phone-chassis, .ai-preview-card, .ai-catalog-result, .video-split-frame, .video-container'
     );
 
     // 6. Button groups
