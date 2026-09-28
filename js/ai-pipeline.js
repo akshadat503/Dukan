@@ -1,6 +1,8 @@
 /* ==========================================================================
    AI INTELLIGENCE PIPELINE JAVASCRIPT
    Interactive pipeline showing multimodal AI transformation for 3 Indian crafts
+   with automatic 4-second cycling slideshow timer, manual click selection,
+   and smooth transition animations.
    ========================================================================== */
 
 (function () {
@@ -50,6 +52,11 @@
     }
   };
 
+  const craftKeys = ['textile', 'pottery', 'brass'];
+  let currentCraftIndex = 0;
+  let autoplayTimer = null;
+  const AUTOPLAY_INTERVAL = 4000; // 4 seconds per craft section
+
   const tabs = document.querySelectorAll('.craft-tab-btn');
   const previewImg = document.getElementById('ai-craft-preview-img');
   const artisanInputElem = document.getElementById('ai-craft-raw-input');
@@ -61,12 +68,15 @@
   const outStatusElem = document.getElementById('ai-out-status');
   const outPriceElem = document.getElementById('ai-out-price');
 
-  function updateCraftView(craftKey) {
-    const data = craftSamples[craftKey];
-    if (!data) return;
+  const previewContainer = document.querySelector('.ai-preview-card');
+  const catalogContainer = document.querySelector('.ai-catalog-result');
 
-    if (previewImg) previewImg.src = data.image;
-    if (artisanInputElem) artisanInputElem.textContent = data.artisanInput;
+  function renderCraftData(data, craftKey) {
+    if (previewImg) {
+      previewImg.src = data.image;
+      previewImg.alt = data.name;
+    }
+    if (artisanInputElem) artisanInputElem.textContent = `"${data.artisanInput}"`;
 
     if (visionTokensElem) {
       visionTokensElem.innerHTML = '';
@@ -86,22 +96,91 @@
     if (outPriceElem) outPriceElem.textContent = data.suggestedPrice;
 
     tabs.forEach(tab => {
-      if (tab.getAttribute('data-craft') === craftKey) {
+      const isMatch = tab.getAttribute('data-craft') === craftKey;
+      if (isMatch) {
         tab.classList.add('active');
+        // Restart the CSS progress animation on the active tab
+        tab.style.animation = 'none';
+        void tab.offsetWidth; // Trigger reflow
+        tab.style.animation = '';
       } else {
         tab.classList.remove('active');
       }
     });
   }
 
-  tabs.forEach(tab => {
+  function updateCraftView(craftKey, smooth = true) {
+    const data = craftSamples[craftKey];
+    if (!data) return;
+
+    if (smooth && previewContainer && catalogContainer) {
+      previewContainer.classList.add('ai-transitioning');
+      catalogContainer.classList.add('ai-transitioning');
+      setTimeout(() => {
+        renderCraftData(data, craftKey);
+        previewContainer.classList.remove('ai-transitioning');
+        catalogContainer.classList.remove('ai-transitioning');
+      }, 150);
+    } else {
+      renderCraftData(data, craftKey);
+    }
+  }
+
+  function nextCraft() {
+    currentCraftIndex = (currentCraftIndex + 1) % craftKeys.length;
+    updateCraftView(craftKeys[currentCraftIndex], true);
+  }
+
+  function startAutoplay() {
+    stopAutoplay();
+    autoplayTimer = setInterval(() => {
+      nextCraft();
+    }, AUTOPLAY_INTERVAL);
+  }
+
+  function stopAutoplay() {
+    if (autoplayTimer) {
+      clearInterval(autoplayTimer);
+      autoplayTimer = null;
+    }
+  }
+
+  function resetAutoplay() {
+    stopAutoplay();
+    startAutoplay();
+  }
+
+  // Tab click event listeners: immediately update view and reset 4-sec timer
+  tabs.forEach((tab) => {
     tab.addEventListener('click', () => {
       const key = tab.getAttribute('data-craft');
-      updateCraftView(key);
+      const idx = craftKeys.indexOf(key);
+      if (idx !== -1) {
+        currentCraftIndex = idx;
+      }
+      updateCraftView(key, true);
+      resetAutoplay();
     });
   });
 
-  // Initial display: textile
-  updateCraftView('textile');
+  // Start autoplay immediately on load
+  startAutoplay();
+
+  // Initial display: first craft (textile)
+  updateCraftView('textile', false);
+
+  // Expose helper on window for debugging & testing
+  window.shilpSetuAiPipeline = {
+    setCraft: (key) => {
+      const idx = craftKeys.indexOf(key);
+      if (idx !== -1) {
+        currentCraftIndex = idx;
+        updateCraftView(key, false);
+        resetAutoplay();
+      }
+    },
+    next: nextCraft,
+    getCurrent: () => craftKeys[currentCraftIndex]
+  };
 
 })();

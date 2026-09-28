@@ -13,7 +13,10 @@ const MIME_TYPES = {
   '.jpeg': 'image/jpeg',
   '.svg': 'image/svg+xml',
   '.webp': 'image/webp',
-  '.ico': 'image/x-icon'
+  '.ico': 'image/x-icon',
+  '.mp4': 'video/mp4',
+  '.webm': 'video/webm',
+  '.apk': 'application/vnd.android.package-archive'
 };
 
 function startServer(attemptPort) {
@@ -51,20 +54,37 @@ function startServer(attemptPort) {
 
     let contentType = MIME_TYPES[ext] || 'application/octet-stream';
 
-    fs.readFile(filePath, (err, content) => {
-      if (err) {
-        if (err.code === 'ENOENT') {
-          console.warn(`[404 NOT FOUND] ${req.method} ${req.url} -> Attempted path: ${filePath}`);
-          res.writeHead(404, { 'Content-Type': 'text/plain' });
-          res.end('404 Not Found: ' + req.url);
-        } else {
-          console.error(`[500 ERROR] ${req.method} ${req.url}:`, err);
-          res.writeHead(500);
-          res.end('Server Error: ' + err.code);
-        }
+    // Check if file exists
+    fs.stat(filePath, (statErr, stats) => {
+      if (statErr || !stats.isFile()) {
+        console.warn(`[404 NOT FOUND] ${req.method} ${req.url} -> Attempted path: ${filePath}`);
+        res.writeHead(404, { 'Content-Type': 'text/plain' });
+        res.end('404 Not Found: ' + req.url);
+        return;
+      }
+
+      // Support HTTP Range requests for video/audio seeking
+      const range = req.headers.range;
+      if (range && (ext === '.mp4' || ext === '.webm')) {
+        const parts = range.replace(/bytes=/, "").split("-");
+        const start = parseInt(parts[0], 10);
+        const end = parts[1] ? parseInt(parts[1], 10) : stats.size - 1;
+        const chunksize = (end - start) + 1;
+        const fileStream = fs.createReadStream(filePath, { start, end });
+        res.writeHead(206, {
+          'Content-Range': `bytes ${start}-${end}/${stats.size}`,
+          'Accept-Ranges': 'bytes',
+          'Content-Length': chunksize,
+          'Content-Type': contentType,
+        });
+        fileStream.pipe(res);
       } else {
-        res.writeHead(200, { 'Content-Type': contentType });
-        res.end(content);
+        res.writeHead(200, {
+          'Content-Length': stats.size,
+          'Content-Type': contentType,
+          'Accept-Ranges': 'bytes'
+        });
+        fs.createReadStream(filePath).pipe(res);
       }
     });
   });
